@@ -1,5 +1,15 @@
 from django.db import models
 
+from .validators import validate_phone_number  
+
+class Client(models.Model):
+    full_name = models.CharField(max_length=100)
+    phone = models.CharField(
+        max_length=20, 
+        unique=True,
+        validators=[validate_phone_number]  
+    )
+    
 class Client(models.Model):
     full_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=20, unique=True)
