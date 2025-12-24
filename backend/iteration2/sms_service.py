@@ -12,5 +12,4 @@ class SMSService:
     
     
     def log_sent(self, count):
-        """Логирование отправленных SMS"""
         print(f"Отправлено SMS: {count}")
