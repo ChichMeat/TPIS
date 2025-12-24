@@ -1,13 +1,15 @@
 DATABASE_SETTINGS = {
-    'host': 'postgres.vetclinic.ru',  
+    'host': 'localhost',
     'port': 5432,
-    'name': 'vetclinic_production',   
-    'user': 'vet_admin'               
+    'name': 'vetclinic_db'
+}
 
 API_KEYS = {
-    'sms_service': 'default_key_123'
+    'sms_service': 'super_secure_key_456',  
+    'email_service': 'mail_key_789',        
+    'payment_gateway': 'pay_key_abc'       
 }
 
 
-DEBUG_MODE = False
-LOG_LEVEL = 'INFO'
+CACHE_TIMEOUT = 300
+REDIS_HOST = 'redis.local'
