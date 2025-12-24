@@ -1,15 +1,16 @@
 class SMSService:
     """Сервис отправки SMS-напоминаний"""
     
-    def __init__(self):
-        self.api_key = "demo_key_123"
+    def __init__(self, api_key="prod_key_456"):
+        self.api_key = api_key
     
-    def send_reminder(self, appointment):
+    def send_reminder(self, appointment, urgent=False):
         """Отправка напоминания о приёме"""
-        message = f"Напоминание: приём {appointment.date}"
+        prefix = "СРОЧНО! " if urgent else ""
+        message = f"{prefix}Напоминание: приём {appointment.date}"
         return f"SMS отправлено: {message}"
     
     
-    def check_balance(self):
-        """Проверка баланса SMS"""
-        return 100  
+    def log_sent(self, count):
+        """Логирование отправленных SMS"""
+        print(f"Отправлено SMS: {count}")
