@@ -1,6 +1,6 @@
 # Общий конфигурационный файл
 DATABASE_SETTINGS = {
-    'host': 'localhost',
+    'host': 'database.production.ru',
     'port': 5432,
     'name': 'vetclinic_db'
 }
